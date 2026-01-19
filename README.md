@@ -1,24 +1,38 @@
-"Voice communication is the main way that pilots 
-and Air Traffic Controllers (ATCos) exchange information. 
-Recently, a number of projects have looked into the use of 
-Automatic Speech Recognition (ASR) technology to 
-automatically extract important information which has the 
-potential to lessen the workload of ATCos. ATC Transcription 
-provides textual information for radio channel dialogue. 
-Because of regional differences, this textual data does not 
-strictly adhere to phraseology and contains transcription errors. 
-Due to this, it is challenging to identify entities or meaningfully 
-annotate the data. This research project mainly focuses to 
-overcome the above issue using supervised Named Entity 
-Recognition (NER) technique by using the dataset which is 
-provided by Honeywell Ltd. The original dataset is converted 
-into BIO tagged dataset using regular expression and this data 
-set is used to train on deep learning models such as LSTM, GRU, 
-Bi-LSTM, Bi-GRU, BERT, Bi-LSTM & CRF. All the models 
-were implemented and each model was analyzed by entity level 
-classification and obtained good results but BERT and Bi
-LSTM and CRF performed well when compared to other 
-models with f1-score and precision of approximately 98% and 
-more. 
+# Overview
+This project applies Named Entity Recognition (NER) to Air Traffic Control (ATC) transcripts using deep learning models.
+The goal is to automatically extract important aviation information from ATC communications.
 
-https://ieeexplore.ieee.org/document/10440794"
+# Problem
+ATC transcripts are noisy, do not strictly follow standard phraseology, and contain transcription errors.
+Manual extraction of information is time-consuming and error-prone.
+
+# Dataset
+The dataset contains 8,241 ATC command transcripts provided by Honeywell Technology Solutions Pvt. Ltd.
+Each command may include multiple entities such as call signs, flight levels, speed, and directions.
+
+# Approach
+Text preprocessing and normalization
+BIO tagging using rule-based patterns
+Sequence labeling using deep learning models
+Evaluation using Precision, Recall, and F1-score
+
+# Supervised Models Used
+LSTM
+Bi-LSTM
+GRU
+Bi-GRU
+BERT
+Bi-LSTM with CRF
+
+# Results
+BERT and Bi-LSTM with CRF achieved the best performance with near-perfect F1-scores.
+Context-aware models performed better than basic recurrent models.
+
+Tech Stack
+Python
+TensorFlow / Keras
+HuggingFace Transformers
+NumPy, Pandas, Scikit-learn
+
+# Publication
+https://ieeexplore.ieee.org/document/10440794/citations#citations
